@@ -1,1 +1,1 @@
-Simple training apps and stuff
+Simple apps
