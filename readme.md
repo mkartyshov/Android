@@ -1,1 +1,1 @@
-Simple apps, complete courses and tasks
+Simple apps
