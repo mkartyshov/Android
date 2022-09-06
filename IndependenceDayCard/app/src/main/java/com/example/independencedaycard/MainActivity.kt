@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.independencedaycard.ui.theme.IndependenceDayCardTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +23,6 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
                 }
             }
         }
@@ -30,14 +30,21 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun GreetingWithText(message: String, from: String) {
+    Text(
+        text = message,
+        fontSize = 30.sp
+    )
+    Text(
+        text = from,
+        fontSize = 20.sp
+    )
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = false)
 @Composable
-fun DefaultPreview() {
+fun IndependencePreview() {
     IndependenceDayCardTheme {
-        Greeting("Android")
+        GreetingWithText("Happy Independence Day!", "- from Mikhail")
     }
 }
