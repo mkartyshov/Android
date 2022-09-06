@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Independence Day Card</string>
+    <string name="greetings_text">Happy Independence Day!</string>
+    <string name="signature_text">- from ZSU</string>
 </resources>
