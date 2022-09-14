@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Eric Cartman</string>
+    <string name="name_text">Eric Cartman</string>
+    <string name="info_text">Eric Cartman is one of four main characters from South Park series.</string>
+    <string name="bio_text">Once upon a time he killed Scott Tenorman\'s parents and made chili from them. Later he gave this chili to Scott. Except this, he is a regular child!</string>
 </resources>
