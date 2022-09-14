@@ -4,10 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -17,6 +14,7 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -31,10 +29,9 @@ class MainActivity : ComponentActivity() {
             LogoAppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    LogoApp()
                 }
             }
         }
@@ -42,8 +39,20 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Logo(unit: String, name: String, image: Painter) {
+fun LogoApp() {
+    Logo(
+        unit = stringResource(R.string.unit),
+        name = stringResource(R.string.name),
+        image = painterResource(R.drawable.logo)
+    )
+}
+
+@Composable
+private fun Logo(unit: String, name: String, image: Painter) {
     Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -68,6 +77,6 @@ fun Logo(unit: String, name: String, image: Painter) {
 @Composable
 fun DefaultPreview() {
     LogoAppTheme {
-        Greeting("Android")
+        LogoApp()
     }
 }
