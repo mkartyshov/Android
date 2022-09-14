@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Compose Quadrant</string>
+    <string name="quadrant1name">First block name</string>
+    <string name="quadrant2name">Second block name</string>
+    <string name="quadrant3name">Third block name</string>
+    <string name="quadrant4name">Fourth block name</string>
+    <string name="quadrant1text">Some simple text in the first block. Let\'s talk about the weather.</string>
+    <string name="quadrant2text">Not so simple text in the second block. Let\'s talk about quantum mechanics.</string>
+    <string name="quadrant3text">Another simple text, now in the third block. It\'s time to talk about food.</string>
+    <string name="quadrant4text">And the final text in the fourth block. Lets just wait, don\'t say anything. Words are useless.</string>
 </resources>
