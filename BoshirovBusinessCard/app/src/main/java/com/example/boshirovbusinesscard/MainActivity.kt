@@ -41,7 +41,13 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CardComposeApp() {
-    Column() {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Bottom,
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+    ) {
         Row() {
             Info(
                 name = stringResource(R.string.name),
@@ -72,25 +78,28 @@ private fun Info(
     photo: Painter,
     logo: Painter
 ) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Top) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
         Row {
             Image(
                 painter = logo,
                 contentDescription = null,
                 modifier = Modifier
-                    .padding(start = 10.dp, top = 50.dp, bottom = 10.dp, end = 10.dp)
+                    .padding(start = 10.dp, bottom = 10.dp, end = 10.dp)
             )
             Image(
                 painter = photo,
                 contentDescription = null,
                 modifier = Modifier
-                    .padding(start = 10.dp, top = 50.dp, bottom = 10.dp, end = 10.dp)
+                    .padding(start = 10.dp, bottom = 10.dp, end = 10.dp)
             )
         }
         Row {
             Text(
                 text = name,
-                fontSize = 30.sp,
+                fontSize = 35.sp,
                 fontWeight = FontWeight.Bold
             )
 
@@ -98,17 +107,16 @@ private fun Info(
         Row {
             Text(
                 text = organization,
-                fontSize = 23.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold
             )
         }
         Row {
             Text(
                 text = jobTitle,
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Bold,
+                fontSize = 25.sp,
                 modifier = Modifier
-                    .padding(bottom = 50.dp)
+                    .padding(bottom = 150.dp)
             )
         }
     }
@@ -124,46 +132,49 @@ private fun Contacts(
     eLogo: Painter
 ) {
     Column(verticalArrangement = Arrangement.Bottom) {
-        Row {
+        Row(modifier = Modifier.fillMaxWidth()) {
             Image(
                 painter = pLogo,
                 contentDescription = null,
                 modifier = Modifier
-                    .padding(start = 10.dp, bottom = 15.dp)
+                    .padding(start = 25.dp, bottom = 15.dp)
             )
             Text(
                 text = phone,
                 textAlign = TextAlign.End,
                 modifier = Modifier
-                    .padding(bottom = 15.dp)
+                    .padding(bottom = 15.dp, end = 25.dp)
+                    .fillMaxWidth()
             )
         }
-        Row {
+        Row(modifier = Modifier.fillMaxWidth()) {
             Image(
                 painter = sLogo,
                 contentDescription = null,
                 modifier = Modifier
-                    .padding(start = 10.dp, bottom = 15.dp)
+                    .padding(start = 25.dp, bottom = 15.dp)
             )
             Text(
                 text = social,
                 textAlign = TextAlign.End,
                 modifier = Modifier
-                    .padding(bottom = 15.dp)
+                    .padding(bottom = 15.dp, end = 25.dp)
+                    .fillMaxWidth()
             )
         }
-        Row {
+        Row(modifier = Modifier.fillMaxWidth()) {
             Image(
                 painter = eLogo,
                 contentDescription = null,
                 modifier = Modifier
-                    .padding(start = 10.dp, bottom = 15.dp)
+                    .padding(start = 25.dp, bottom = 15.dp)
             )
             Text(
                 text = email,
                 textAlign = TextAlign.End,
                 modifier = Modifier
-                    .padding(bottom = 50.dp)
+                    .padding(bottom = 50.dp, end = 25.dp)
+                    .fillMaxWidth()
             )
         }
     }
