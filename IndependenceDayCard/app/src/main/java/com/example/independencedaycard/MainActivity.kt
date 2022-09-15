@@ -42,7 +42,7 @@ fun GreetingWithText(message: String, from: String) {
             modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentWidth(Alignment.CenterHorizontally)
-                .padding(start = 13.dp, top = 13.dp)
+                .padding(start = 16.dp, top = 16.dp)
         )
         Text(
             text = from,
@@ -50,7 +50,7 @@ fun GreetingWithText(message: String, from: String) {
             modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentWidth(Alignment.CenterHorizontally)
-                .padding(start = 13.dp, top = 13.dp)
+                .padding(start = 16.dp, top = 16.dp)
 
         )
     }
