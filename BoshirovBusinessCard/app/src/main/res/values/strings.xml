@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Boshirov Business Card</string>
+    <string name="name">Ruslan Boshirov</string>
+    <string name="job_title">Professional Killer</string>
+    <string name="phone">+7 969 228 14 88</string>
+    <string name="instagram">\@ladykilla69</string>
+    <string name="email">rusik1980@rambler.ru</string>
 </resources>
