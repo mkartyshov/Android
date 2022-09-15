@@ -11,12 +11,16 @@ import androidx.compose.material.Text
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.boshirovbusinesscard.ui.theme.BoshirovBusinessCardTheme
 
 class MainActivity : ComponentActivity() {
@@ -41,6 +45,7 @@ fun CardComposeApp() {
         Row() {
             Info(
                 name = stringResource(R.string.name),
+                organization = stringResource(R.string.organization),
                 jobTitle = stringResource(R.string.job_title),
                 photo = painterResource(R.drawable.boshirov),
                 logo = painterResource(R.drawable.gru)
@@ -60,31 +65,50 @@ fun CardComposeApp() {
 }
 
 @Composable
-private fun Info(name: String, jobTitle: String, photo: Painter, logo: Painter) {
-    Column {
+private fun Info(
+    name: String,
+    organization: String,
+    jobTitle: String,
+    photo: Painter,
+    logo: Painter
+) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Top) {
         Row {
             Image(
                 painter = logo,
                 contentDescription = null,
                 modifier = Modifier
-                    .padding(start = 10.dp, top = 5.dp, bottom = 10.dp, end = 1.dp)
+                    .padding(start = 10.dp, top = 50.dp, bottom = 10.dp, end = 10.dp)
             )
             Image(
                 painter = photo,
                 contentDescription = null,
                 modifier = Modifier
-                    .padding(start = 10.dp, top = 5.dp, bottom = 10.dp, end = 1.dp)
+                    .padding(start = 10.dp, top = 50.dp, bottom = 10.dp, end = 10.dp)
             )
         }
         Row {
             Text(
-                text = name
+                text = name,
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold
             )
 
         }
         Row {
             Text(
-                text = jobTitle
+                text = organization,
+                fontSize = 23.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
+        Row {
+            Text(
+                text = jobTitle,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .padding(bottom = 50.dp)
             )
         }
     }
@@ -98,33 +122,48 @@ private fun Contacts(
     pLogo: Painter,
     sLogo: Painter,
     eLogo: Painter
-    ) {
-    Column() {
+) {
+    Column(verticalArrangement = Arrangement.Bottom) {
         Row {
             Image(
                 painter = pLogo,
-                contentDescription = null
+                contentDescription = null,
+                modifier = Modifier
+                    .padding(start = 10.dp, bottom = 15.dp)
             )
             Text(
-                text = phone
+                text = phone,
+                textAlign = TextAlign.End,
+                modifier = Modifier
+                    .padding(bottom = 15.dp)
             )
         }
         Row {
             Image(
                 painter = sLogo,
-                contentDescription = null
+                contentDescription = null,
+                modifier = Modifier
+                    .padding(start = 10.dp, bottom = 15.dp)
             )
             Text(
-                text = social
+                text = social,
+                textAlign = TextAlign.End,
+                modifier = Modifier
+                    .padding(bottom = 15.dp)
             )
         }
         Row {
             Image(
                 painter = eLogo,
-                contentDescription = null
+                contentDescription = null,
+                modifier = Modifier
+                    .padding(start = 10.dp, bottom = 15.dp)
             )
             Text(
-                text = email
+                text = email,
+                textAlign = TextAlign.End,
+                modifier = Modifier
+                    .padding(bottom = 50.dp)
             )
         }
     }
