@@ -67,15 +67,13 @@ private fun Info(name: String, jobTitle: String, photo: Painter, logo: Painter) 
                 painter = logo,
                 contentDescription = null,
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 1.dp, top = 5.dp, bottom = 10.dp, end = 1.dp)
+                    .padding(start = 10.dp, top = 5.dp, bottom = 10.dp, end = 1.dp)
             )
             Image(
                 painter = photo,
                 contentDescription = null,
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 1.dp, top = 5.dp, bottom = 10.dp, end = 1.dp)
+                    .padding(start = 10.dp, top = 5.dp, bottom = 10.dp, end = 1.dp)
             )
         }
         Row {
