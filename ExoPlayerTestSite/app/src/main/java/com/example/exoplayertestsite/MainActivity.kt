@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         fun test() = "Hello world"
 
-        /*btn.setOnClickListener {
+       /* btn.setOnClickListener {
             if (player.isPlaying) {
                 player.stop()
                 btn.text = "Play"

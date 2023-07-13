@@ -32,10 +32,17 @@ class PlayerService : Service() {
         val dataSource = DefaultHttpDataSource.Factory()
         val stream = MediaItem.fromUri("https://vivalaresistance.ru/streamradio")
         val mediaSource = ProgressiveMediaSource.Factory(dataSource).createMediaSource(stream)
-        player.setWakeMode(C.WAKE_MODE_NETWORK)
-        player.setMediaSource(mediaSource)
-        player.prepare()
-        player.setHandleAudioBecomingNoisy(true)
+
+        if (player.isPlaying) {
+            player.stop()
+        } else {
+            player.setWakeMode(C.WAKE_MODE_NETWORK)
+            player.setMediaSource(mediaSource)
+            player.prepare()
+            player.setHandleAudioBecomingNoisy(true)
+            player.playWhenReady = true
+            startService(intent)
+        }
 
         return START_STICKY
     }
