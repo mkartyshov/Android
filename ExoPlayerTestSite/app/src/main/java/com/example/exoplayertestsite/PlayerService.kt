@@ -30,7 +30,7 @@ class PlayerService : Service() {
 
         // Set up the player
         val dataSource = DefaultHttpDataSource.Factory()
-        val stream = MediaItem.fromUri("https://vivalaresistance.ru/streamradio")
+        val stream = MediaItem.fromUri("https://nashe1.hostingradio.ru:80/nashe-64.mp3")
         val mediaSource = ProgressiveMediaSource.Factory(dataSource).createMediaSource(stream)
 
         if (player.isPlaying) {
@@ -39,7 +39,6 @@ class PlayerService : Service() {
             player.setWakeMode(C.WAKE_MODE_NETWORK)
             player.setMediaSource(mediaSource)
             player.prepare()
-            player.setHandleAudioBecomingNoisy(true)
             player.playWhenReady = true
             startService(intent)
         }
