@@ -13,11 +13,13 @@ class BroadcastReceiver: BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         
         if (intent!!.action == "com.tester.alarmmanager") {
-            var b = intent.extras
+            val b = intent.extras
             Toast.makeText(context, b!!.getString("message"), Toast.LENGTH_LONG).show()
-
             val i = Intent(context, MusicService::class.java)
             context!!.applicationContext.startForegroundService(i)
+        } else if (intent.action.equals("android.intent.action.BOOT_COMPLETED")) {
+            val saveData = SaveData(context!!)
+            saveData.setAlarm()
         }
     }
 }

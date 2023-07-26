@@ -14,6 +14,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/day_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="3 for tuesday, 4 for wednesday"
+        app:layout_constraintBottom_toTopOf="@+id/button_done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_picker" />
+
     <Button
         android:id="@+id/button_done"
         android:layout_width="wrap_content"
