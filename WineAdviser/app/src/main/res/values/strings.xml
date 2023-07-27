@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Wine Adviser</string>
+    <string name="find_wine">Find wine</string>
+    <string name="no_wine">No wine selected</string>
+    <string name="red">Red</string>
+    <string name="white">White</string>
+    <string name="rose">Rose</string>
+    <string-array name="dishes">
+        <item>Meat</item>
+        <item>Fish</item>
+        <item>Salad</item>
+    </string-array>
+</resources>
