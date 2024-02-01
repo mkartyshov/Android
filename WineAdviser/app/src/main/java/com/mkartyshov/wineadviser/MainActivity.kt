@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         val findWine = findViewById<Button>(R.id.button)
         val dishes = findViewById<Spinner>(R.id.dishes)
         val wineName = findViewById<TextView>(R.id.textView)
-        
+
         findWine.setOnClickListener {
             when (dishes.selectedItem.toString()) {
                 "Meat" -> wineName.text = getString(R.string.red)
